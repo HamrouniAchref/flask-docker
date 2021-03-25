@@ -1,0 +1,19 @@
+version: '3'
+networks:
+  test:
+    driver: bridge
+
+services:
+
+  flask-container:
+    container_name: flask-container
+    build: ./web
+    restart: always
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./web:/app  
+networks:
+  test:
+    driver: bridge
+    
